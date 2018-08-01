@@ -15,6 +15,9 @@
                     @endif
 
                     You are logged in!
+                    
+                    <hr>
+                    <a href="{{ route('test.index') }}" class="btn btn-block btn-info">Test View</a>
                 </div>
             </div>
         </div>
