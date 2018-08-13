@@ -14,11 +14,12 @@
                         </div>
                     @endif
                         <div class="form-group row">
-                            <div for="name" class="col-sm-4 col-form-label text-md-right">{{ __('Name') }}</div>
+                            <div for="name" class="col-sm-4 col-form-label text-md-right">{{ __('Test Feed') }}</div>
 
                             <div class="col-md-6">
                                 <div id="name" class="form-control" name="name">
-                                    {{ $test->name }}
+                                    <h3><strong>{{ $test->name }}</strong> <br>
+                                    <small>{{ $test->description }}</small></h3>
 
                                     <hr>
                                     <a href="{{ route('test.edit', $test->id) }}" class="btn btn-warning">Edit</a> | <a href="" class="btn btn-danger" onclick="

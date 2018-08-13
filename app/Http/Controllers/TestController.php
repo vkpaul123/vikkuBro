@@ -43,11 +43,13 @@ class TestController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'description' => 'required',
         ]);
 
         $test = new Test;
         $test->name = $request->name;
+        $test->description = $request->description;
         $test->save();
 
         return redirect(route('test.index'));
@@ -90,11 +92,13 @@ class TestController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required',
+            'description' => 'required',
         ]);
         
         $test = Test::find($id);
         $test->name = $request->name;
+        $test->description = $request->description;
         $test->save();
 
         return redirect(route('test.index'));

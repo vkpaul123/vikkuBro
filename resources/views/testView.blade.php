@@ -19,6 +19,8 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
+                                <th>Description</th>
+                                <th>Link</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th>Options</th>
@@ -30,17 +32,19 @@
                                 <tr>
                                     <td>{{ $test->id }}</td>
                                     <td>{{ $test->name }}</td>
+                                    <td>{{ $test->description }}</td>
+                                    <td><a href="{{ $test->link }}">{{ $test->link }}</a></td>
                                     <td>{{ $test->created_at }}</td>
                                     <td>{{ $test->updated_at }}</td>
                                     <td>
-                                        <a href="{{ route('test.show', $test->id) }}" class="btn btn-primary">View</a> | <a href="{{ route('test.edit', $test->id) }}" class="btn btn-warning">Edit</a> | <a href="" class="btn btn-danger" onclick="
+                                        <a href="{{ route('test.edit', $test->id) }}" class="fa fa-pencil"></a> | <a href="" class="fa fa-trash" onclick="
                                         if(confirm('Are You Sure, you want to delete this record?')) {
                                             event.preventDefault();
                                             document.getElementById('delete-test-{{ $test->id }}').submit();
                                         } else {
                                             event.preventDefault();
                                         }
-                                    ">Delete</a>
+                                    "></a>
 
                                     <form action="{{ route('test.destroy', $test->id) }}"id="delete-test-{{ $test->id }}" method="post" style="display: none;">
                                         @csrf
