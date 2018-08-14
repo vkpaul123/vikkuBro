@@ -12,10 +12,11 @@ class Test extends Model implements Feedable
     {
     	return FeedItem::create()
     		->id($this->id)
-    		->name($this->name)
-    		->description($this->description)
-    		->created_at($this->created_at)
-    		->updated_at($this->updated_at);
+    		->title($this->name)
+    		->summary($this->description)
+    		->link($this->link)
+            ->author($this->name)
+    		->updated($this->updated_at);
 
     }
 
