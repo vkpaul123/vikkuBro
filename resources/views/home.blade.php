@@ -5,7 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">
+                    Dashboard
+
+                    <a href="{{ url('/feed') }}" class="btn pull-right btn-success">View Feed</a>
+                </div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,6 +22,7 @@
                     
                     <hr>
                     <a href="{{ route('test.index') }}" class="btn btn-block btn-info">Test View</a>
+                    
                 </div>
             </div>
         </div>
