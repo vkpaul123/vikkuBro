@@ -14,7 +14,6 @@ class Test extends Model implements Feedable
     		->id($this->id)
     		->name($this->name)
     		->description($this->description)
-    		->link($this->link)
     		->created_at($this->created_at)
     		->updated_at($this->updated_at);
 
